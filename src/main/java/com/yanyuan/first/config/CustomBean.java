@@ -1,0 +1,42 @@
+package com.yanyuan.first.config;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+/**
+ * @author: yanyuan
+ * @Date: 2020/9/21 17:01
+ * @Description:
+ */
+@ConfigurationProperties(prefix = "first.project")
+@PropertySource(value = "classpath:custom.properties")
+@Configuration
+public class CustomBean {
+    private String name;
+    private String created;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCreated() {
+        return created;
+    }
+
+    public void setCreated(String created) {
+        this.created = created;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomBean{" +
+                "name='" + name + '\'' +
+                ", created='" + created + '\'' +
+                '}';
+    }
+}
