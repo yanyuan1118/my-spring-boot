@@ -26,9 +26,20 @@ class CustomerRepositoryTest {
     @Test
     void save(){
         repository.deleteAll();
-        repository.save(new Customer(UUID.randomUUID().toString(), "李", "四"));
-        repository.save(new Customer(UUID.randomUUID().toString(), "王", "五"));
-        repository.save(new Customer(UUID.randomUUID().toString(), "赵", "六"));
+        repository.save(new Customer("lisi", "李", "四"));
+        repository.save(new Customer("wangwu", "王", "五"));
+        repository.save(new Customer("zhaoliu", "赵", "六"));
+        repository.save(new Customer("xiaoba", "小", "八"));
+    }
+
+    @Test
+    void deleteById(){
+        repository.deleteById("xiaoba");
+    }
+
+    @Test
+    void update(){
+        repository.save(new Customer("wangwu", "李", "九"));
     }
 
     @Test
