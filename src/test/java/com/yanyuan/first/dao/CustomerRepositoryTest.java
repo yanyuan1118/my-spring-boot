@@ -25,6 +25,7 @@ class CustomerRepositoryTest {
 
     @Test
     void save(){
+        repository.deleteAll();
         repository.save(new Customer(UUID.randomUUID().toString(), "李", "四"));
         repository.save(new Customer(UUID.randomUUID().toString(), "王", "五"));
         repository.save(new Customer(UUID.randomUUID().toString(), "赵", "六"));
