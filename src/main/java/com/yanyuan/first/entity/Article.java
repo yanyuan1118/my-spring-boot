@@ -18,9 +18,12 @@ import java.util.List;
 public class Article {
 
     @Id
-    public String id;
-    public String title;
-    public String content;
-    List<Comment> commentList;
+    private String id;
+    private String title;
+    private String content;
+    private Integer praiseCount;
+    private Integer commentCount;
+    private Integer visitCount;
+    private Author author;
 
 }
