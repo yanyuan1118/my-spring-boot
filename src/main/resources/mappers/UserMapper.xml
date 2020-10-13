@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yanyuan.first.dao.mybatis.UserMapper">
+
+    <resultMap id="BaseResult" type="com.yanyuan.first.entity.User">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="age" column="age" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <select id="getById" resultMap="BaseResult">
+        SELECT * FROM user where id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <select id="queryList" resultMap="BaseResult">
+        SELECT * FROM user
+    </select>
+
+    <!-- 新增并且返回自增长ID  user.getId() -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into user (name,age,create_time)
+        values (
+        #{name, jdbcType=VARCHAR},
+        #{age, jdbcType=INTEGER},
+        sysdate()
+        )
+    </insert>
+
+    <update id="updateById" parameterType="com.yanyuan.first.entity.User">
+        update user
+        set name = #{name, jdbcType=VARCHAR} ,
+        age = #{age, jdbcType=INTEGER}
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <update id="deleteById" parameterType="com.yanyuan.first.entity.User">
+        delete from user where id = #{id, jdbcType=INTEGER}
+    </update>
+</mapper>
