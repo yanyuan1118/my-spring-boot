@@ -28,6 +28,6 @@ class RedisHelperTest {
 
     @Test
     void getValue() {
-        log.info("token -> {}", redisHelper.getValue("token"));
+        log.info("getValue key: token, value: {}", redisHelper.getValue("token"));
     }
 }
