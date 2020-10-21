@@ -1,7 +1,8 @@
-package com.yanyuan.first.service;
+package com.yanyuan.first.service.impl;
 
 import com.yanyuan.first.dao.StudentDao;
 import com.yanyuan.first.entity.Student;
+import com.yanyuan.first.service.StudentService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
