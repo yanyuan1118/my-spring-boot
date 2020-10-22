@@ -8,6 +8,7 @@
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="age" column="age" jdbcType="INTEGER"/>
+        <result property="credits" column="credits" jdbcType="INTEGER"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
     <select id="getById" resultMap="BaseResult">
@@ -31,7 +32,8 @@
     <update id="updateById" parameterType="com.yanyuan.first.entity.User">
         update user
         set name = #{name, jdbcType=VARCHAR} ,
-        age = #{age, jdbcType=INTEGER}
+        age = #{age, jdbcType=INTEGER},
+        credits = #{credits, jdbcType=INTEGER}
         where id = #{id, jdbcType=INTEGER}
     </update>
 

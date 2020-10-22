@@ -6,6 +6,8 @@ import com.yanyuan.first.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.beans.Transient;
@@ -49,20 +51,25 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 赠送积分
-     * propagation = TransactionDefinition.PROPAGATION_REQUIRED
      * @param fromUid
      * @param toUid
      * @param credits
      * @return
      */
     @Override
-    @Transactional()
+    @Transactional
+    public boolean donateCreditsOpenTransactional(Integer fromUid, Integer toUid, Integer credits){
+        return donateCredits(fromUid, toUid, credits);
+    }
+
+    @Override
     public boolean donateCredits(Integer fromUid, Integer toUid, Integer credits){
         User formUser = getById(fromUid);
         User toUser = getById(toUid);
         formUser.setCredits(formUser.getCredits() - credits);
         toUser.setCredits(toUser.getCredits() + credits);
         updateById(formUser);
+        //模拟异常
         int test = 1/0;
         updateById(toUser);
         return true;

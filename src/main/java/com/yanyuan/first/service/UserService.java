@@ -17,4 +17,5 @@ public interface UserService {
     Integer updateById(User user);
     Integer deleteById(Integer id);
     boolean donateCredits(Integer fromUid, Integer toUid, Integer credits);
+    boolean donateCreditsOpenTransactional(Integer fromUid, Integer toUid, Integer credits);
 }

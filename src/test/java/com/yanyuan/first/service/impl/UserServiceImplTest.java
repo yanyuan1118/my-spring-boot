@@ -38,6 +38,22 @@ class UserServiceImplTest {
     void deleteById() {
     }
 
+
+
+    /**
+     * 赠送积分-开启事务
+     */
+    @Test
+    void donateCreditsOpenTransactional() {
+        try {
+            userService.donateCreditsOpenTransactional(1, 2, 5);
+        }catch (Exception e){
+            log.error(e.getMessage());
+        }
+        log.info("open Transactional formUser : {}", userService.getById(1));
+        log.info("open Transactional toUser : {}", userService.getById(2));
+    }
+
     /**
      * 赠送积分
      */
