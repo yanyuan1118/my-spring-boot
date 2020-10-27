@@ -9,7 +9,6 @@ import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-import static com.yanyuan.first.common.QueueConstants.QUEUE_KEY;
 
 /**
  * @author: yanyuan
@@ -20,9 +19,13 @@ import static com.yanyuan.first.common.QueueConstants.QUEUE_KEY;
 @Component
 public class ImageCompressionConsumer {
 
+    /**
+     * 消息发送到交换机，交换机通过路由routing key发送到对应的队列。
+     * @param message
+     */
     @RabbitListener(bindings = @QueueBinding(
             exchange = @Exchange(QueueConstants.EXCHANGE_IMG),
-            key = QueueConstants.QUEUE_KEY,
+            key = QueueConstants.ROUTING_KEY,
             value = @Queue(QueueConstants.QUEUE_NAME)
     ))
     public void process(String message){

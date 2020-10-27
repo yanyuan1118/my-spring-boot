@@ -28,7 +28,7 @@ public class ImageCompressionProducer {
         requestParam.put("style", style);
         amqpTemplate.convertAndSend(
                 QueueConstants.EXCHANGE_IMG,
-                QueueConstants.QUEUE_KEY,
+                QueueConstants.ROUTING_KEY,
                 JSONObject.toJSONString(requestParam));
     }
 }
