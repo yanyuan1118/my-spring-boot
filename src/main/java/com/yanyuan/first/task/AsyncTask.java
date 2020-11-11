@@ -21,6 +21,7 @@ public class AsyncTask {
         log.info("thread name = {}, message = {}",
                 Thread.currentThread().getName(),
                 "task start");
+        //等待3秒
         TimeUnit.SECONDS.sleep(3);
         log.info("thread name = {}, message = {}",
                 Thread.currentThread().getName(),
@@ -31,6 +32,7 @@ public class AsyncTask {
     @Async("taskAsyncPool")
     public Future<String> doAsyncTask() throws InterruptedException {
         log.info("thread name = {}, message = {}", Thread.currentThread().getName(), "async start");
+        //等待3秒
         TimeUnit.SECONDS.sleep(3);
         log.info("thread name = {}, message = {}", Thread.currentThread().getName(), "async end");
         return new AsyncResult<>("async execute complete");
