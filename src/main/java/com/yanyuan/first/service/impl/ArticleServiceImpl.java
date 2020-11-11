@@ -29,7 +29,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    @Transactional
+    @Transactional//事务注解
     public String publish(Article article) {
         article.setStatus("PUBLISH");
         articleRepository.save(article);

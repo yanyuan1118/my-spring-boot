@@ -8,17 +8,9 @@ import com.yanyuan.first.entity.Article;
  * @Description:
  */
 public interface ArticleService {
-    /**
-     * 存草稿
-     * @param article
-     * @return
-     */
+    //存草稿
     String draft(Article article);
 
-    /**
-     * 发布文章
-     * @param article
-     * @return
-     */
+    //发布文章
     String publish(Article article);
 }
