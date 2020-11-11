@@ -1,10 +1,12 @@
 package com.yanyuan.first.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,17 +15,12 @@ import java.util.List;
  * @Description:
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Builder
 public class Article {
-
     @Id
     private String id;
     private String title;
     private String content;
-    private Integer praiseCount;
-    private Integer commentCount;
-    private Integer visitCount;
-    private Author author;
-
+    private String status;
+    private Date createTime;
 }

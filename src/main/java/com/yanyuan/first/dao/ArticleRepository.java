@@ -3,7 +3,6 @@ package com.yanyuan.first.dao;
 import com.yanyuan.first.entity.Article;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.List;
 
 /**
  * @author: yanyuan
@@ -11,6 +10,5 @@ import java.util.List;
  * @Description:
  */
 public interface ArticleRepository extends MongoRepository<Article, String> {
-    List<Article> findByTitle(String title);
-    List<Article> findByContent(String content);
+
 }
