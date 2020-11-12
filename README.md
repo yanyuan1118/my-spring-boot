@@ -17,6 +17,6 @@
 -  **monogo-transaction** : [Springboot monogoDB事务处理](https://blog.csdn.net/yanyuan_1118/article/details/109624106)
 -  **async-task** : [Spring Boot异步任务：@Async](https://blog.csdn.net/yanyuan_1118/article/details/109200434)
 
-#### 其他
+#### 其它
 - [Spring Boot配置文件优先级别](https://blog.csdn.net/yanyuan_1118/article/details/108129101)
 - [Spring Boot单元测试：GroboUtils多线程测试](https://blog.csdn.net/yanyuan_1118/article/details/107757670)
