@@ -18,5 +18,7 @@
 -  **async-task** : [Spring Boot异步任务：@Async](https://blog.csdn.net/yanyuan_1118/article/details/109200434)
 
 #### 其它
+- [Spring Boot快速入门：SpringBoot是什么？](https://blog.csdn.net/yanyuan_1118/article/details/108486733)
+- [Spring Boot快速入门：配置文件](https://blog.csdn.net/yanyuan_1118/article/details/108713841)
 - [Spring Boot配置文件优先级别](https://blog.csdn.net/yanyuan_1118/article/details/108129101)
 - [Spring Boot单元测试：GroboUtils多线程测试](https://blog.csdn.net/yanyuan_1118/article/details/107757670)
