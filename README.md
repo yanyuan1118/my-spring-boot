@@ -9,7 +9,7 @@
 #### 分支说明
 
 -  **5-jpa** ：[springboot jpa使用](https://blog.csdn.net/yanyuan_1118/article/details/108753605) 
--  **8-mongo** : [Spring Boot数据访问：使用MongoDB]:(https://blog.csdn.net/yanyuan_1118/article/details/108879596)
+-  **8-mongo** : [Spring Boot数据访问：使用MongoDB](https://blog.csdn.net/yanyuan_1118/article/details/108879596)
 -  **data-redis** : [Spring Boot数据访问：Redis应用](https://blog.csdn.net/yanyuan_1118/article/details/109046462)
 - **data-mybaits**: [Spring Boot数据访问：整合Mybatis](https://blog.csdn.net/yanyuan_1118/article/details/109049425)
 -  **data-transaction** : [Spring Boot数据访问：事务处理](https://blog.csdn.net/yanyuan_1118/article/details/109195741)
