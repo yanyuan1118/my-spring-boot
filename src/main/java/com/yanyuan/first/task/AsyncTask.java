@@ -29,6 +29,12 @@ public class AsyncTask {
         return "task complete";
     }
 
+
+    /**
+     * Async 对某个方法进行异步执行
+     * @return
+     * @throws InterruptedException
+     */
     @Async("taskAsyncPool")
     public Future<String> doAsyncTask() throws InterruptedException {
         log.info("thread name = {}, message = {}", Thread.currentThread().getName(), "async start");

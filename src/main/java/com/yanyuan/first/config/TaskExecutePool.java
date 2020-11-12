@@ -12,6 +12,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * 创建线程池
+ * EnableAsync 开启异步的支持
  * @Author yanyuan
  *
  */
