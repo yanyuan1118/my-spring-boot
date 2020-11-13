@@ -33,8 +33,8 @@ public class NettyClient {
                 .handler(new NettyClientInitializer());
         try {
             log.info("客户端连接成功...");
-//            future = bootstrap.connect("127.0.0.1", 8090).sync();
-            future = bootstrap.connect("127.0.0.1", 8090);
+            future = bootstrap.connect("127.0.0.1", 8090).sync();
+//            future = bootstrap.connect("127.0.0.1", 8090);
             future.channel().writeAndFlush("你好呀");
             //等待连接关闭
             future.channel().closeFuture().sync();
