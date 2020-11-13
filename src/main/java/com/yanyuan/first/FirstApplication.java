@@ -1,5 +1,6 @@
 package com.yanyuan.first;
 
+import com.yanyuan.first.netty.NettyClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -12,6 +13,8 @@ public class FirstApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FirstApplication.class, args);
+		NettyClient nettyClient = new NettyClient();
+		nettyClient.start();
 	}
 
 }
