@@ -7,7 +7,9 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.net.NioChannel;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author: yanyuan
@@ -15,11 +17,14 @@ import org.apache.tomcat.util.net.NioChannel;
  * @Description: 客户端
  */
 @Slf4j
+@Component
 public class NettyClient {
 
+    ChannelFuture future;
+
+    @PostConstruct
     public void start(){
         EventLoopGroup group = new NioEventLoopGroup();
-
         Bootstrap bootstrap = new Bootstrap()
                 .group(group)
                 //该参数的作用就是禁止使用Nagle算法，使用于小数据即时传输
@@ -27,15 +32,20 @@ public class NettyClient {
                 .channel(NioSocketChannel.class)
                 .handler(new NettyClientInitializer());
         try {
-            ChannelFuture future = bootstrap.connect("127.0.0.1", 8090).sync();
             log.info("客户端连接成功...");
+//            future = bootstrap.connect("127.0.0.1", 8090).sync();
+            future = bootstrap.connect("127.0.0.1", 8090);
             future.channel().writeAndFlush("你好呀");
             //等待连接关闭
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }finally {
+            group.shutdownGracefully();
         }
+    }
 
-
+    public void sendMsg(String msg){
+        future.channel().writeAndFlush(msg);
     }
 }
