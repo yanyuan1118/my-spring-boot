@@ -18,4 +18,5 @@ public interface UserMapper {
     Integer add(User user);
     Integer updateById(User user);
     Integer deleteById(@Param("id") Integer id);
+    Integer batchInsert(List<User> list);
 }

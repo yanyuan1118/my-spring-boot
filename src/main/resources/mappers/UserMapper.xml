@@ -28,6 +28,19 @@
         )
     </insert>
 
+    <!-- 新增并且返回自增长ID  user.getId() -->
+    <insert id="batchInsert" useGeneratedKeys="true" keyProperty="id">
+        insert into user (name,age,create_time)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.name, jdbcType=VARCHAR},
+            #{item.age, jdbcType=INTEGER},
+            sysdate()
+            )
+        </foreach>
+    </insert>
+
     <update id="updateById" parameterType="com.yanyuan.first.entity.User">
         update user
         set name = #{name, jdbcType=VARCHAR} ,
